@@ -1,6 +1,6 @@
 <?php
 
-// napojení se do databáze
+// připojení do databáze
 function Connection(){
     global $connection;
     $connection = mysqli_connect("localhost","root","","loginapplication");
@@ -17,7 +17,6 @@ function addFun(){
     global $connection;
     $username = $_POST["username"];
     $password = $_POST["password"];
-
 
     // Escapování inputů
     $username = mysqli_real_escape_string($connection, $username);
@@ -51,7 +50,6 @@ function selectFun(){
     }
 }
 
-
 // aktualizace dat z databáze
 function UpdateFun(){
     global $connection;
@@ -84,6 +82,3 @@ function DeleteFun(){
         die("Query selhalo");
     }
 }
-
-
-?>
